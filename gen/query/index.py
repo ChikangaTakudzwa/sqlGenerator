@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, render_template
 from dotenv import load_dotenv
 import requests
 import openai
@@ -7,7 +7,7 @@ import os
 # Load environment variables from .env file
 load_dotenv()
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='../templates')
 
 api_key = os.getenv('API_KEY')
 openai.api_key = api_key
@@ -36,7 +36,7 @@ def generate_response(prompt):
 
 @app.route('/', methods=['GET'])
 def index():
-    return "Welcome to SQL Generator"
+    return render_template('index.html')
 
 @app.route('/generate_response', methods=['POST'])
 def get_response():
