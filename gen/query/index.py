@@ -7,7 +7,7 @@ import os
 # Load environment variables from .env file
 load_dotenv()
 
-app = Flask(__name__, template_folder='../templates')
+app = Flask(__name__, template_folder='../templates', static_folder='../static')
 
 api_key = os.getenv('API_KEY')
 openai.api_key = api_key
