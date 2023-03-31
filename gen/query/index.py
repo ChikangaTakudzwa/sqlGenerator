@@ -32,6 +32,10 @@ def generate_response(prompt):
 
     return generated_text
 
+@app.route('/', methods=['GET'])
+def index():
+    return "Welcome to SQL Generator"
+
 @app.route('/generate_response', methods=['POST'])
 def get_response():
     data = request.get_json()
