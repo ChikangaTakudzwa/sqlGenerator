@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css" rel="stylesheet" type="text/css" />
         <link href="{{ url_for('static', filename='custom.css') }}" rel="stylesheet" type="text/css" />
+        <script src="{{ url_for('static', filename='custom.js') }}"></script>
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body>
@@ -14,5 +15,6 @@
         {% include 'includes/samples.html' %}
         {% include 'includes/app.html' %}
         {% include 'footer.html' %}
+
     </body>
 </html>
