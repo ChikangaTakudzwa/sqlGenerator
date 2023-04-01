@@ -40,13 +40,15 @@ def index():
 
 @app.route('/generate_response', methods=['POST'])
 def get_response():
-    message = request.form.get('message')
+    message = request.form.get('prompt')
 
     if message is None:
         return 'Error: no message provided'
 
-    prompt = "Please generate a MySQL query from the following text, only query without explanation: " + message
-    # Generate the response using the OpenAI API
-    response = generate_response(prompt)
+    # gpt_prompt = "Please generate a MySQL query from the following text, only query without explanation: " + message
+    # # Generate the response using the OpenAI API
+    # response = generate_response(gpt_prompt)
 
-    return response
+    acting_response = "SELECT * FROM Car"
+
+    return acting_response
